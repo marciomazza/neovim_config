@@ -15,6 +15,7 @@ return {
     require "mini.jump".setup()
     require "mini.splitjoin".setup()
     require "mini.extra".setup()
+    require "mini.files".setup()
 
     require "mini.comment".setup {
       options = {
