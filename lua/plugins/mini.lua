@@ -15,7 +15,12 @@ return {
     require "mini.jump".setup()
     require "mini.splitjoin".setup()
     require "mini.extra".setup()
-    require "mini.files".setup()
+
+    local mini_files = require "mini.files"
+    mini_files.setup({
+      mappings = { close = "<F2>" }
+    })
+    vim.keymap.set("n", "<F2>", mini_files.open)
 
     require "mini.comment".setup {
       options = {
@@ -24,6 +29,7 @@ return {
         end,
       }
     }
+
     local gen_highlighter = require "mini.extra".gen_highlighter
     require "mini.hipatterns".setup({
       highlighters = {
